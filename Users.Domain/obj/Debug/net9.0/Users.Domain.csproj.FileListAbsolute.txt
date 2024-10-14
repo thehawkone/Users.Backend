@@ -1,0 +1,12 @@
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\bin\Debug\net9.0\Users.Domain.deps.json
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\bin\Debug\net9.0\Users.Domain.dll
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\bin\Debug\net9.0\Users.Domain.pdb
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\Users.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\Users.Domain.AssemblyInfoInputs.cache
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\Users.Domain.AssemblyInfo.cs
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\Users.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\Users.Domain.sourcelink.json
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\Users.Domain.dll
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\refint\Users.Domain.dll
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\Users.Domain.pdb
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.Domain\obj\Debug\net9.0\ref\Users.Domain.dll

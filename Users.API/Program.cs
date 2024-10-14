@@ -3,7 +3,9 @@ using Users.DataAccess;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Users.Application.Services;
 using Users.DataAccess;
+using Users.DataAccess.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,10 @@ builder.Services.AddDbContext<UsersDbContext>(
     options => {
         options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(UsersDbContext)));
     });
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<TokenService>();
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 

@@ -1,0 +1,16 @@
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\bin\Debug\net9.0\Users.DataAccess.deps.json
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\bin\Debug\net9.0\Users.DataAccess.dll
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\bin\Debug\net9.0\Users.DataAccess.pdb
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\bin\Debug\net9.0\Users.Domain.dll
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\bin\Debug\net9.0\Users.Domain.pdb
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.AssemblyInfo.cs
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.sourcelink.json
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.Da.B358B313.Up2Date
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.dll
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\refint\Users.DataAccess.dll
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\Users.DataAccess.pdb
+C:\Users\Administrator\RiderProjects\Users.Backend\Users.DataAccess\obj\Debug\net9.0\ref\Users.DataAccess.dll
