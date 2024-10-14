@@ -37,6 +37,50 @@ public class UserService
         return new UserDto { Id = user.Id, UserName = user.UserName, Email = user.Email };
     }
     
+    public async Task<string> LoginAsync(string userName, string password)
+    {
+        var user = await _userRepository.GetUserByUserName(userName);
+        if (user == null || !VerifyPassword(password, user.PasswordHash)) {
+            throw new Exception("Пароль или логин неверный!");
+        }
+
+        await _usersDbContext.SaveChangesAsync();
+        return _tokenService.GenerateJwtToken(userName);
+    }
+
+    public async Task<bool> ChangePasswordAsync(Guid userId, string currentPassword, string newPassword)
+    {
+        var user = await _userRepository.GetUserById(userId);
+        if (user == null) {
+            throw new Exception("Пользователь не найден!");
+        }
+
+        if (!VerifyPassword(currentPassword, user.PasswordHash)) {
+            throw new Exception("Пароль неверный!");
+        }
+        
+        var newHashedPassword = HashPassword(newPassword);
+        user.PasswordHash = newHashedPassword;
+        
+        await _userRepository.UpdateUserAsync(user);
+        await _usersDbContext.SaveChangesAsync();
+
+        return true;
+    }
+
+    public async Task<bool> DeleteUserAsync(Guid userId)
+    {
+        var user = await _userRepository.GetUserById(userId);
+        if (user == null) {
+            throw new Exception("Пароль неверный!");
+        }
+        
+        await _userRepository.DeleteUserAsync(userId);
+        await _usersDbContext.SaveChangesAsync();
+
+        return true;
+    }
+    
     private string HashPassword(string password)
     {
         return BCrypt.Net.BCrypt.HashPassword(password); 
@@ -45,39 +89,5 @@ public class UserService
     private bool VerifyPassword(string password, string hashedPassword)
     {
         return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-    }
-
-    public async Task<string> LoginAsync(string userName, string password)
-    {
-        var user = await _userRepository.GetUserByUserName(userName);
-        if (user == null || !VerifyPassword(password, user.PasswordHash)) {
-            throw new Exception("Invalid username or password");
-        }
-
-        await _usersDbContext.SaveChangesAsync();
-        return _tokenService.GenerateJwtToken(userName);
-    }
-
-    public async Task ChangePasswordAsync(Guid userId, string newPassword)
-    {
-        var user = await _userRepository.GetUserById(userId);
-        if (user == null) {
-            throw new Exception("User not found");
-        }
-        
-        user.PasswordHash = HashPassword(newPassword);
-        await _userRepository.UpdateUserAsync(user);
-        await _usersDbContext.SaveChangesAsync();
-    }
-
-    public async Task DeleteUserAsync(Guid userId)
-    {
-        var user = await _userRepository.GetUserById(userId);
-        if (user == null) {
-            throw new Exception("User not found");
-        }
-        
-        await _userRepository.DeleteUserAsync(userId);
-        await _usersDbContext.SaveChangesAsync();
     }
 }
