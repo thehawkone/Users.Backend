@@ -48,15 +48,19 @@ public class UserService
         return _tokenService.GenerateJwtToken(userName);
     }
 
-    public async Task<bool> ChangePasswordAsync(Guid userId, string currentPassword, string newPassword)
+    public async Task<bool> ChangePasswordAsync(Guid userId, string oldPassword, string newPassword)
     {
         var user = await _userRepository.GetUserById(userId);
         if (user == null) {
-            throw new Exception("Пользователь не найден!");
+            throw new ArgumentException("Пользователь не найден!");
         }
 
-        if (!VerifyPassword(currentPassword, user.PasswordHash)) {
-            throw new Exception("Пароль неверный!");
+        if (!VerifyPassword(oldPassword, user.PasswordHash)) {
+            throw new UnauthorizedAccessException("Пароль неверный!");
+        }
+
+        if (oldPassword == newPassword) {
+            throw new ArgumentException("Новый пароль не должен совпадать со старым!");
         }
         
         var newHashedPassword = HashPassword(newPassword);

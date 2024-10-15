@@ -39,15 +39,12 @@ public class AuthController : ControllerBase
     }
 
     [HttpPut("change-password")]
-    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto changePasswordDto)
+    public async Task<IActionResult> ChangePassword(Guid userId, ChangePasswordDto changePasswordDto)
     {
-        var userId = Guid.Parse(User.FindFirst("Id").Value);
-        var result = await _userService.ChangePasswordAsync(userId, 
-            changePasswordDto.Password, changePasswordDto.newPassword);
+        await _userService.ChangePasswordAsync
+            (userId, changePasswordDto.Password, changePasswordDto.newPassword);
 
-        if (!result) return BadRequest("Возникла ошибка при измении пароля");
-        
-        return Ok("Пароль успешно заменен!");
+        return Ok("Пароль успешно изменён!");
     }
 
     [HttpDelete("delete")]
