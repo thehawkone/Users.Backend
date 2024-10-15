@@ -10,6 +10,8 @@ Users API предоставляет набор RESTful методов для у
 - ## Стек технологий
 - C#
 - ASP.NET Core Web API
+- PostgreSQL
+- Docker Compose
 - Entity Framework Core 
 - JWT
 - BCrypt
