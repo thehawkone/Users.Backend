@@ -51,11 +51,17 @@ public class AuthController : ControllerBase
     }
 
     [HttpDelete("delete")]
-    public async Task<IActionResult> Delete()
+    public async Task<IActionResult> Delete(Guid id)
     {
-        var userId = Guid.Parse(User.FindFirst("Id").Value);
-        await _userService.DeleteUserAsync(userId);
-
-        return Ok("Пользователь успешно удален!");
+        try {
+            await _userService.DeleteUserAsync(id);
+            return Ok("Пользователь удалён!");
+        }
+        catch (ArgumentException ex) {
+            return BadRequest(ex.Message);
+        }
+        catch (KeyNotFoundException ex) {
+            return NotFound(ex.Message);
+        }
     }
 }

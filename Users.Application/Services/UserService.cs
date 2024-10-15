@@ -72,7 +72,7 @@ public class UserService
     {
         var user = await _userRepository.GetUserById(userId);
         if (user == null) {
-            throw new Exception("Пароль неверный!");
+            throw new Exception("Неверный идентификатор пользователя!");
         }
         
         await _userRepository.DeleteUserAsync(userId);
